@@ -12,16 +12,16 @@
 // camelize("-webkit-transition") == 'WebkitTransition';
 // P.S. Hint: use split to split the string into an array, transform it and join back.
 
-function camelize(str){
-    let array = str.split('-')
-    // console.log(array)
-    let array2 = array.map((word, index) => index === 0 ? word : word[0].toUpperCase() + word.slice(1))
-    // console.log('test', array2)
-    str = array2.join('')
-    return str
-}
-console.log(camelize("hoping-for-the-best"))
-console.log(camelize('-oh-my-gosh-I-think-I-finally-got-this-to-work!'))
+// function camelize(str){
+//     let array = str.split('-')
+//     // console.log(array)
+//     let array2 = array.map((word, index) => index === 0 ? word : word[0].toUpperCase() + word.slice(1))
+//     // console.log('test', array2)
+//     str = array2.join('')
+//     return str
+// }
+// console.log(camelize("hoping-for-the-best"))
+// console.log(camelize('-oh-my-gosh-I-think-I-finally-got-this-to-work!'))
 
 // tried this one with the .forEach and didn't find a way to make that work. suspect the returning of a new array of .map is necessary in this case. I end up reassigning the original string with the new array
 // str.charAt(0).toUpperCase() + str.slice(1);
@@ -102,20 +102,20 @@ console.log(camelize('-oh-my-gosh-I-think-I-finally-got-this-to-work!'))
 
 // filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
 
-function filterRangeInPlace(arr, a,b){
-    for(let i = 0; i < arr.length; i++){
-    console.log(arr, arr[i],"firstTest")
-        let value = arr[i]
-        if(value < a || value > b){
-            console.log("curious",arr, arr[i])
-            arr.splice(i,1,)
-            i--
-        }
-    }              
-    console.log(arr,"endresult")
-}
+// function filterRangeInPlace(arr, a,b){
+//     for(let i = 0; i < arr.length; i++){
+//     console.log(arr, arr[i],"firstTest")
+//         let value = arr[i]
+//         if(value < a || value > b){
+//             console.log("curious",arr, arr[i])
+//             arr.splice(i,1,)
+//             i--
+//         }
+//     }              
+//     console.log(arr,"endresult")
+// }
 
-filterRangeInPlace([3,4,5,6,7,8,9],5,7)
+// filterRangeInPlace([3,4,5,6,7,8,9],5,7)
 
 
 // alert( arr ); // [3, 1]
@@ -152,20 +152,20 @@ filterRangeInPlace([3,4,5,6,7,8,9],5,7)
 
 // Create a function copySorted(arr) that returns such a copy.
 
-function copySorted(arr){
+// function copySorted(arr){
   
-    let mapArray = arr.map(e=>e).sort()
-    let sorted = arr.slice()
-    // console.log("first", mapArray)
-    sorted = sorted.sort()
-    // console.log("second", mapArray)
-    alert(sorted)
-    alert(arr)
-    alert(mapArray)
-    // console.log(sorted)
+//     let mapArray = arr.map(e=>e).sort()
+//     let sorted = arr.slice()
+//     // console.log("first", mapArray)
+//     sorted = sorted.sort()
+//     // console.log("second", mapArray)
+//     alert(sorted)
+//     alert(arr)
+//     alert(mapArray)
+//     // console.log(sorted)
 
-}
-copySorted(["HTML", "JavaScript", "CSS"])
+// }
+// copySorted(["HTML", "JavaScript", "CSS"])
 
 
 // let arr = ["HTML", "JavaScript", "CSS"];
@@ -175,6 +175,9 @@ copySorted(["HTML", "JavaScript", "CSS"])
 // alert( sorted ); // CSS, HTML, JavaScript
 // alert( arr ); // HTML, JavaScript, CSS (no changes)
 // solution
+
+
+
 // Create an extendable calculator
 // importance: 5
 // Create a constructor function Calculator that creates “extendable” calculator objects.
@@ -182,6 +185,7 @@ copySorted(["HTML", "JavaScript", "CSS"])
 // The task consists of two parts.
 
 // First, implement the method calculate(str) that takes a string like "1 + 2" in the format “NUMBER operator NUMBER” (space-delimited) and returns the result. Should understand plus + and minus -.
+
 
 // Usage example:
 
