@@ -122,11 +122,27 @@ filterRangeInPlace([3,4,5,6,7,8,9],5,7)
 // Open a sandbox with tests.
 
 // solution
+
+
 // Sort in decreasing order
 // importance: 4
 // let arr = [5, 2, 1, -10, 8];
 
-// // ... your code to sort it in decreasing order
+// function sortDecreasing(arr){
+   
+//     arr.sort((a,b) => b - a)
+//     alert(arr)
+// }
+// sortDecreasing([6, -8, 3, 15, -90])
+
+
+// let arr = [5, 2, -15, 1, -10, 8];
+
+// arr.sort((a, b) => b - a);
+
+// alert( arr );
+// // -9,2,5,8
+// ... your code to sort it in decreasing order
 
 // alert( arr ); // 8, 5, 2, 1, -10
 // solution
@@ -135,6 +151,22 @@ filterRangeInPlace([3,4,5,6,7,8,9],5,7)
 // We have an array of strings arr. We’d like to have a sorted copy of it, but keep arr unmodified.
 
 // Create a function copySorted(arr) that returns such a copy.
+
+function copySorted(arr){
+  
+    let mapArray = arr.map(e=>e).sort()
+    let sorted = arr.slice()
+    // console.log("first", mapArray)
+    sorted = sorted.sort()
+    // console.log("second", mapArray)
+    alert(sorted)
+    alert(arr)
+    alert(mapArray)
+    // console.log(sorted)
+
+}
+copySorted(["HTML", "JavaScript", "CSS"])
+
 
 // let arr = ["HTML", "JavaScript", "CSS"];
 
