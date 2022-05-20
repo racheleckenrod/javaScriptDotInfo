@@ -57,18 +57,18 @@
 // importance: 5
 // We have an object storing salaries of our team:
 
-let salaries = {
-    John: '100',
-    Ann: '160',
-    Pete: '130'
-  }
+// let salaries = {
+//     John: '100',
+//     Ann: '160',
+//     Pete: '130'
+//   }
   
-  let sum = 0
+//   let sum = 0
   
-  for (let key in salaries){
-    sum+=Number(salaries[key])
-  }
-  console.log(sum)
+//   for (let key in salaries){
+//     sum+=Number(salaries[key])
+//   }
+//   console.log(sum)
 
 // let salaries = {
 //   John: 100,
@@ -78,9 +78,6 @@ let salaries = {
 // // Write the code to sum all salaries and store in the variable sum. Should be 390 in the example above.
 // for (let key in salaries){
 //     let sumArr += salaries[key]
-    
-    
-    
 // }
 
 
@@ -91,9 +88,26 @@ let salaries = {
 //     console.log("test", sum)
 // }
 // solution
+
+
 // Multiply numeric property values by 2
 // importance: 3
 // Create a function multiplyNumeric(obj) that multiplies all numeric property values of obj by 2.
+
+
+multiplyNumeric(obj){
+    for(let key in obj){
+        if(typeof obj[key] === 'number'){
+            // obj[key] = obj[key] * 2
+            obj[key] *= 2
+        }
+    }
+}
+
+
+
+
+
 
 // For instance:
 
