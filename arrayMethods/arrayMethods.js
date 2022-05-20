@@ -185,8 +185,18 @@
 // The task consists of two parts.
 
 // First, implement the method calculate(str) that takes a string like "1 + 2" in the format “NUMBER operator NUMBER” (space-delimited) and returns the result. Should understand plus + and minus -.
-
-
+// some PREP: function takes in a string that needs to be converted into an array. I see we can use split on strings.. and make that array.
+function calculator(str){
+    let result = str.split(' ')
+    let operation = ''
+    if(result[1] === "+"){
+        operation = Number(result[0]) + Number(result[2])
+    }else if(result[1] === "-"){
+        operation = Number(result[0]) - Number(result[2])
+    }
+    console.log(operation)
+}
+calculator('1 + 2')
 // Usage example:
 
 // let calc = new Calculator;

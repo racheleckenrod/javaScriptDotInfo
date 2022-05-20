@@ -95,14 +95,14 @@
 // Create a function multiplyNumeric(obj) that multiplies all numeric property values of obj by 2.
 
 
-function multiplyNumeric(obj){
-    for(let key in obj){
-        if(typeof obj[key] === 'number'){
-            // obj[key] = obj[key] * 2
-            obj[key] *= 2
-        }
-    }
-}
+// function multiplyNumeric(obj){
+//     for(let key in obj){
+//         if(typeof obj[key] === 'number'){
+//             // obj[key] = obj[key] * 2
+//             obj[key] *= 2
+//         }
+//     }
+// }
 
 
 
@@ -128,6 +128,72 @@ function multiplyNumeric(obj){
 // Please note that multiplyNumeric does not need to return anything. It should modify the object in-place.
 
 // P.S. Use typeof to check for a number here.
+
+// Open a sandbox with tests.
+
+// solution
+
+
+// Object-methods
+
+// Create a calculator
+// importance: 5
+// Create an object calculator with three methods:
+
+// read() prompts for two values and saves them as object properties with names a and b respectively.
+// sum() returns the sum of saved values.
+// mul() multiplies saved values and returns the result.
+// let calculator = {
+//     read(){
+//         this.a = Number(prompt('Give a value', 0))
+//         this.b =  Number(prompt('give a second value', 0))
+//     },
+//     sum(){
+//         return "sum equals  " + (this.a + this.b)
+//     },
+//     mul(){
+//         return "product equals  " + (this.a * this.b)
+//     }
+// }
+
+// calculator.read();
+// alert( calculator.sum() );
+// alert( calculator.mul() );
+
+// this took a lot of playing around with the code to figure some stuff out.
+// Run the demo
+
+// Open a sandbox with tests.
+
+// solution
+// Chaining
+// importance: 2
+// There’s a ladder object that allows to go up and down:
+
+// let ladder = {
+//   step: 0,
+//   up() {
+//     this.step++;
+//   },
+//   down() {
+//     this.step--;
+//   },
+//   showStep: function() { // shows the current step
+//     alert( this.step );
+//   }
+// };
+// Now, if we need to make several calls in sequence, can do it like this:
+
+// ladder.up();
+// ladder.up();
+// ladder.down();
+// ladder.showStep(); // 1
+// ladder.down();
+// ladder.showStep(); // 0
+// Modify the code of up, down and showStep to make the calls chainable, like this:
+
+// ladder.up().up().down().showStep().down().showStep(); // shows 1 then 0
+// Such approach is widely used across JavaScript libraries.
 
 // Open a sandbox with tests.
 
