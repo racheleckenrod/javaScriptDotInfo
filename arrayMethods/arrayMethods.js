@@ -406,36 +406,36 @@
 
 
 
-  let count = {
-    '123': 0,
-    '132': 0,
-    '213': 0,
-    '231': 0,
-    '321': 0,
-    '312': 0
-  };
+//   let count = {
+//     '123': 0,
+//     '132': 0,
+//     '213': 0,
+//     '231': 0,
+//     '321': 0,
+//     '312': 0
+//   };
   
-  function shuffle(array){
-      let shuffledArr = []
-      let x = 0
-      for( let i = 0; i < array.length; i++){
-          x = Math.floor(Math.random() * (array.length))
+//   function shuffle(array){
+//       let shuffledArr = []
+//       let x = 0
+//       for( let i = 0; i < array.length; i++){
+//           x = Math.floor(Math.random() * (array.length))
   
-          shuffledArr.push(array[x])
-          array.splice(x, 1)
-      } 
-      shuffledArr.push(array[0])
-      array = shuffledArr
-      return array
-  }
+//           shuffledArr.push(array[x])
+//           array.splice(x, 1)
+//       } 
+//       shuffledArr.push(array[0])
+//       array = shuffledArr
+//       return array
+//   }
   
-  for (let i = 0; i < 1000000; i++) {
-    let array = [1, 2, 3];
-    count[shuffle(array).join('')]++;
+//   for (let i = 0; i < 1000000; i++) {
+//     let array = [1, 2, 3];
+//     count[shuffle(array).join('')]++;
 
-  }
+//   }
 
-  console.table(count)
+//   console.table(count)
 // // function getRandomInt(min, max) {
 // //     min = Math.ceil(min);
 // //     max = Math.floor(max);
@@ -498,6 +498,9 @@
 // // All element orders should have an equal probability. For instance, [1,2,3] can be reordered as [1,2,3] or [1,3,2] or [3,1,2] etc, with equal probability of each case.
 
 // solution
+
+
+
 // Get average age
 // importance: 4
 // Write the function getAverageAge(users) that gets an array of objects with property age and returns the average age.
@@ -512,8 +515,22 @@
 
 // let arr = [ john, pete, mary ];
 
+// function getAverageAge(users){
+//     let ave = 0
+//    let total = arr.reduce((ave, user) => ave + user.age, 0)
+//    ave = total / users.length
+//    return ave
+// }
+
+// function getAverageAge(users){
+//     return users.reduce((prev, user) => prev + user.age, 0) / users.length
+// }
+
 // alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
-// solution
+// // solution
+
+
+
 // Filter unique array members
 // importance: 4
 // Let arr be an array.
@@ -522,15 +539,23 @@
 
 // For instance:
 
-// function unique(arr) {
-//   /* your code */
-// }
+function unique(arr) {
+  /* your code */
+//   let newArr = arr.filter(string => string (newArr.includes(string))
+    return arr.filter((string, index) => arr.indexOf(string) === index)
+  
+    //  function removeDuplicates(arr) {
+    //     return arr.filter((item,
+    //         index) => arr.indexOf(item) === index);
+    // }
+ 
+}
 
-// let strings = ["Hare", "Krishna", "Hare", "Krishna",
-//   "Krishna", "Krishna", "Hare", "Hare", ":-O"
-// ];
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
 
-// alert( unique(strings) ); // Hare, Krishna, :-O
+alert( unique(strings) ); // Hare, Krishna, :-O
 // Open a sandbox with tests.
 
 // solution
