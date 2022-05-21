@@ -186,20 +186,69 @@
 
 // First, implement the method calculate(str) that takes a string like "1 + 2" in the format “NUMBER operator NUMBER” (space-delimited) and returns the result. Should understand plus + and minus -.
 // some PREP: function takes in a string that needs to be converted into an array. I see we can use split on strings.. and make that array.
-function calculator(str){
-    let result = str.split(' ')
-    let operation = ''
-    if(result[1] === "+"){
-        operation = Number(result[0]) + Number(result[2])
-    }else if(result[1] === "-"){
-        operation = Number(result[0]) - Number(result[2])
-    }
-    console.log(operation)
-}
-calculator('1 + 2')
-// Usage example:
+// function calculator(str){
+//     let result = str.split(' ')
+//     let operation = ''
+//     if(result[1] === "+"){
+//         operation = Number(result[0]) + Number(result[2])
+//     }else if(result[1] === "-"){
+//         operation = Number(result[0]) - Number(result[2])
+//     }
+//     console.log(operation)
+// }
+// calculator('1 + 2')
+
+// function Calculator(str){
+//     this.input = str.split(' ')
+//     this.operand = this.input[1]
+//     if(this.input[1] === "+"){
+//         return Number(input[0]) + Number(input[2])
+//     }else if(this.input[1] === "-"){
+//         return Number(input[0]) - Number(input[2])
+//     }else{
+//         return "error"
+//     }
+// }
+// console.log(Calculator('1 + 2'))
+// // Usage example:
 
 // let calc = new Calculator;
+
+// function Calculator() {
+//     this.methods = {
+//         "-": (a, b) => a - b,
+//         "+": (a, b) => a + b
+//     }
+
+//     this.calculate = function(str) {
+
+//         let split = str.split(' '),
+//          a = +split[0],
+//          op = split[1],
+//          b = +split[2]
+//         if(!this.methods[op] || isNaN(a) || isNaN(b)){
+//             return NaN
+//         }
+
+//         return this.methods[op](a,b)
+//     }
+    
+//     this.addMethod = function(name, func) {
+//         this.methods[name] = func
+//     }
+// }
+
+
+// let powerCalc = new Calculator;
+// powerCalc.addMethod("*", (a, b) => a * b);
+// powerCalc.addMethod("/", (a, b) => a / b);
+// powerCalc.addMethod("**", (a, b) => a ** b);
+
+// let result = powerCalc.calculate("2 ** 3");
+// alert( result ); // 8
+
+// console.log(powerCalc)
+
 
 // alert( calc.calculate("3 + 7") ); // 10
 // Then add the method addMethod(name, func) that teaches the calculator a new operation. It takes the operator name and the two-argument function func(a,b) that implements it.
@@ -219,6 +268,8 @@ calculator('1 + 2')
 // Open a sandbox with tests.
 
 // solution
+
+
 // Map to names
 // importance: 5
 // You have an array of user objects, each one has user.name. Write the code that converts it into an array of names.
@@ -231,10 +282,14 @@ calculator('1 + 2')
 
 // let users = [ john, pete, mary ];
 
-// let names = /* ... your code */
+
+// let names = users.map(item => item.name)
+// // let names = /* ... your code */
 
 // alert( names ); // John, Pete, Mary
-// solution
+// // solution
+
+
 // Map to objects
 // importance: 5
 // You have an array of user objects, each one has name, surname and id.
