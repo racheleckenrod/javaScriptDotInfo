@@ -539,26 +539,28 @@
 
 // For instance:
 
-function unique(arr) {
-  /* your code */
-//   let newArr = arr.filter(string => string (newArr.includes(string))
-    return arr.filter((string, index) => arr.indexOf(string) === index)
+// function unique(arr) {
+//   /* your code */
+// //   let newArr = arr.filter(string => string (newArr.includes(string))
+//     return arr.filter((string, index) => arr.indexOf(string) === index)
   
-    //  function removeDuplicates(arr) {
-    //     return arr.filter((item,
-    //         index) => arr.indexOf(item) === index);
-    // }
+//     //  function removeDuplicates(arr) {
+//     //     return arr.filter((item,
+//     //         index) => arr.indexOf(item) === index);
+//     // }
  
-}
+// }
 
-let strings = ["Hare", "Krishna", "Hare", "Krishna",
-  "Krishna", "Krishna", "Hare", "Hare", ":-O"
-];
+// let strings = ["Hare", "Krishna", "Hare", "Krishna",
+//   "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
 
-alert( unique(strings) ); // Hare, Krishna, :-O
+// alert( unique(strings) ); // Hare, Krishna, :-O
 // Open a sandbox with tests.
 
 // solution
+
+
 // Create keyed object from array
 // importance: 4
 // Let’s say we received an array of users in the form {id:..., name:..., age:... }.
@@ -567,14 +569,21 @@ alert( unique(strings) ); // Hare, Krishna, :-O
 
 // For example:
 
-// let users = [
-//   {id: 'john', name: "John Smith", age: 20},
-//   {id: 'ann', name: "Ann Smith", age: 24},
-//   {id: 'pete', name: "Pete Peterson", age: 31},
-// ];
+let users = [
+  {id: 'john', name: "John Smith", age: 20},
+  {id: 'ann', name: "Ann Smith", age: 24},
+  {id: 'pete', name: "Pete Peterson", age: 31},
+];
 
 // let usersById = groupById(users);
 
+function groupById(array) {
+    return array.reduce((obj,value) => {
+      obj[value.id] = value;
+      return obj;
+    }, {})
+  }
+console.log(groupById(users))
 // /*
 // // after the call we should have:
 
