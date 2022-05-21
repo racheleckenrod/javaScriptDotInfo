@@ -298,27 +298,27 @@
 
 // For instance:
 
-let john = { name: "John", surname: "Smith", id: 1 };
-let pete = { name: "Pete", surname: "Hunt", id: 2 };
-let mary = { name: "Mary", surname: "Key", id: 3 };
+// let john = { name: "John", surname: "Smith", id: 1 };
+// let pete = { name: "Pete", surname: "Hunt", id: 2 };
+// let mary = { name: "Mary", surname: "Key", id: 3 };
 
-let users = [ john, pete, mary ];
+// let users = [ john, pete, mary ];
 
-let usersMapped = users.map(user => ({fullName: `${user.name} ${user.surname}`, id: user.id
-}))
+// let usersMapped = users.map(user => ({fullName: `${user.name} ${user.surname}`, id: user.id
+// }))
 
-console.log(usersMapped)
+// console.log(usersMapped)
 
-// /*
-// usersMapped = [
-//   { fullName: "John Smith", id: 1 },
-//   { fullName: "Pete Hunt", id: 2 },
-//   { fullName: "Mary Key", id: 3 }
-// ]
-// */
+// // /*
+// // usersMapped = [
+// //   { fullName: "John Smith", id: 1 },
+// //   { fullName: "Pete Hunt", id: 2 },
+// //   { fullName: "Mary Key", id: 3 }
+// // ]
+// // */
 
-alert( usersMapped[0].id ) // 1
-alert( usersMapped[0].fullName ) // John Smith
+// alert( usersMapped[0].id ) // 1
+// alert( usersMapped[0].fullName ) // John Smith
 // So, actually you need to map one array of objects to another. Try using => here. There’s a small catch.
 
 // solution
@@ -334,13 +334,21 @@ alert( usersMapped[0].fullName ) // John Smith
 
 // let arr = [ pete, john, mary ];
 
-// sortByAge(arr);
+// // sortByAge(arr);
+// function sortByAge(users){
+//     users.sort((a, b) => a.age - b.age)
+//     return users
+// }
 
-// // now: [john, mary, pete]
+// arr = sortByAge(arr)
+// console.log(arr)
+// // // now: [john, mary, pete]
 // alert(arr[0].name); // John
 // alert(arr[1].name); // Mary
 // alert(arr[2].name); // Pete
 // solution
+
+
 // Shuffle an array
 // importance: 3
 // Write the function shuffle(array) that shuffles (randomly reorders) elements of the array.
@@ -348,17 +356,146 @@ alert( usersMapped[0].fullName ) // John Smith
 // Multiple runs of shuffle may lead to different orders of elements. For instance:
 
 // let arr = [1, 2, 3];
+// Pseudocode:
+// How to get the second number random, and not = the first number? given 1 2 3, if the first number is 2, then to pick between 1 and 3 without picking  two.. if we get a random number between 1 and three, then one between one and two, then end with the last one, how to write code that will eliminate the first number. array length and Math.floor will give the correct number to start, but I cant see how to eliminate the first answer from the remaining numbers. somehow to keep track of what numbers are left to choose from and pick from them. in other words, start with array length - 1 number of variables (or a placeholder of some kind) perhaps simple numbers will do- and be able to translate into what index goes into resulting array first, next etc until end of array is reached and you are left with last number- so that the fifty-fifty of the second to last number is able to give the result of the two remaining numbers, not the answer of between one and two per say. Maybe working this backwards will yield a correct way to solve this problem. so the last index will be the last number, the second to last will be 50/50 or 1/2, the third to last will be 1/3, the fouth would be 1/4. seems there needs to be two steps here, one to get the random integer from the number of numbers left, and another to translate that to the actual index (number) we started with, so that the second time the loop iterates, and it choosing a random number , it is choosing between one less number. Like a code.. where we have our origninal array with four numbers in it [1,2,3,4], randomly pick one of them , then we have three- but not the same as starting with three- we could have [1,2,3], [2,3,4], [1,3,4], [1,2,4] the random number getter is only going to pick from one to three, and not take into account what three it is getting, 
 
-// shuffle(arr);
-// // arr = [3, 2, 1]
 
-// shuffle(arr);
-// // arr = [2, 1, 3]
+// function shuffle(array){
+//     let shuffledArr = []
+//     let x = 0
+//     for( let i = 0; i < array.length; i++){
+//         x = Math.floor(Math.random() * (array.length))
+      
+//         shuffledArr.push(array[x])
+//         array.splice(x, 1)
+//     } 
+//     shuffledArr.push(array[0])
+//     array = shuffledArr
+//     return array
+// }
 
-// shuffle(arr);
-// // arr = [3, 1, 2]
-// // ...
-// All element orders should have an equal probability. For instance, [1,2,3] can be reordered as [1,2,3] or [1,3,2] or [3,1,2] etc, with equal probability of each case.
+
+// console.log(shuffle([1,2,3]))
+  
+//   // show counts of all possible permutations
+//   for (let key in count) {
+//     console.table(`${key}: ${count[key]}`);
+//   }
+// // console.log(shuffle([1,2,3]))
+
+// let count = {
+//     '123': 0,
+//     '132': 0,
+//     '213': 0,
+//     '231': 0,
+//     '321': 0,
+//     '312': 0
+//   };
+  
+//   for (let i = 0; i < 100; i++) {
+//     let array = [1, 2, 3];
+    
+//     shuffle(array);
+//     count[array.join('')]++;
+//   }
+  
+//   // show counts of all possible permutations
+//   for (let key in count) {
+//     console.log(`${key}: ${count[key]}`);
+//   }
+
+
+
+  let count = {
+    '123': 0,
+    '132': 0,
+    '213': 0,
+    '231': 0,
+    '321': 0,
+    '312': 0
+  };
+  
+  function shuffle(array){
+      let shuffledArr = []
+      let x = 0
+      for( let i = 0; i < array.length; i++){
+          x = Math.floor(Math.random() * (array.length))
+  
+          shuffledArr.push(array[x])
+          array.splice(x, 1)
+      } 
+      shuffledArr.push(array[0])
+      array = shuffledArr
+      return array
+  }
+  
+  for (let i = 0; i < 1000000; i++) {
+    let array = [1, 2, 3];
+    count[shuffle(array).join('')]++;
+
+  }
+
+  console.table(count)
+// // function getRandomInt(min, max) {
+// //     min = Math.ceil(min);
+// //     max = Math.floor(max);
+// //     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+// //   }
+
+// // function shuffle(array) {
+// //     for (let i = array.length - 1; i > 0; i--) {
+// //       let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+  
+// //       // swap elements array[i] and array[j]
+// //       // we use "destructuring assignment" syntax to achieve that
+// //       // you'll find more details about that syntax in later chapters
+// //       // same can be written as:
+// //     //   let t = array[i]; array[i] = array[j]; array[j] = t
+// //     //   [array[i], array[j]] = [array[j], array[i]];
+// //     }
+// // //   }
+// //   function shuffle(array) {
+// //     for (let i = array.length - 1; i > 0; i--) {
+// //       let j = Math.floor(Math.random() * (i + 1));
+// //       [array[i], array[j]] = [array[j], array[i]];
+// //     }
+// //   }
+  
+//   // counts of appearances for all possible permutations
+// //   let count = {
+// //     '123': 0,
+// //     '132': 0,
+// //     '213': 0,
+// //     '231': 0,
+// //     '321': 0,
+// //     '312': 0
+// //   };
+ 
+// //   for (let i = 0; i < 1000; i++) {
+// //     let array = [1, 2, 3];
+// //     shuffle(array);
+// //     count[array.join('')]++;
+
+// //   }
+  
+// //   // show counts of all possible permutations
+// //   for (let key in count) {
+// //     console.table(`${key}: ${count[key]}`);
+// //   }
+// //   console.log(shuffle([1,2,3]))
+// // // let max = array.length
+
+// // Math.random() * (max - min) + min;
+// // // shuffle(arr);
+// // // arr = [3, 2, 1]
+
+// // shuffle(arr);
+// // // arr = [2, 1, 3]
+
+// // shuffle(arr);
+// // // arr = [3, 1, 2]
+// // // ...
+// // All element orders should have an equal probability. For instance, [1,2,3] can be reordered as [1,2,3] or [1,3,2] or [3,1,2] etc, with equal probability of each case.
 
 // solution
 // Get average age
